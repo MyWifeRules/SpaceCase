@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre8"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/lwjgl-2.9.1/jar/lwjgl.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/Users/Maaro_000/Desktop/Programming%20stuff%20W8/lwjgl/javadoc/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/lwjgl-2.9.1/native/windows"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/lwjgl-2.9.1/jar/lwjgl_util.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/Users/Maaro_000/Desktop/Programming%20stuff%20W8/lwjgl/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib/slick.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/Users/Maaro_000/Desktop/Programming%20stuff%20W8/lwjgl/slick/javadoc/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/twl/TWL.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://twl.l33tlabs.org/dist/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/twl/external-libs/xpp3-1.1.4c.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/twl/external-libs/lwjgl_util_applet.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib/jorbis-0.0.15.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib/jnlp.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib/jinput.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib/ibxm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/lwjgl-2.9.1/jar/asm-debug-all.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/lwjgl-2.9.1/jar/jinput.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

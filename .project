@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Spacecase</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>resources/ComicNeue-Regular.ttf</name>
+			<type>1</type>
+			<location>C:/Users/Maaro_000/Desktop/testPage/css/fonts/ComicNeue-Regular.ttf</location>
+		</link>
+		<link>
+			<name>src/tpg.png</name>
+			<type>1</type>
+			<location>C:/Users/Maaro_000/workspace/DBZPowers/src/tpg.png</location>
+		</link>
+	</linkedResources>
+</projectDescription>
