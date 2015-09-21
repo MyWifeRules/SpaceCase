@@ -2,36 +2,73 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="resources"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre8"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/lwjgl-2.9.1/jar/lwjgl.jar">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_60"/>
+	<classpathentry kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/lwjgl-2.9.3/lwjgl-2.9.3/jar/lwjgl.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="file:/C:/Users/Maaro_000/Desktop/Programming%20stuff%20W8/lwjgl/javadoc/"/>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/lwjgl-2.9.1/native/windows"/>
+			<attribute name="javadoc_location" value="http://legacy.lwjgl.org/javadoc/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/lwjgl-2.9.3/lwjgl-2.9.3/native/windows"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/lwjgl-2.9.1/jar/lwjgl_util.jar">
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/lwjgl-2.9.3/lwjgl-2.9.3/jar/lwjgl_util.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="file:/C:/Users/Maaro_000/Desktop/Programming%20stuff%20W8/lwjgl/javadoc/"/>
+			<attribute name="javadoc_location" value="http://legacy.lwjgl.org/javadoc/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib/slick.jar">
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/slick/lib/slick.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="file:/C:/Users/Maaro_000/Desktop/Programming%20stuff%20W8/lwjgl/slick/javadoc/"/>
+			<attribute name="javadoc_location" value="http://slick.ninjacave.com/javadoc/"/>
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/twl/TWL.jar">
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/twl/TWL.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="http://twl.l33tlabs.org/dist/javadoc/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/twl/external-libs/xpp3-1.1.4c.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/twl/external-libs/lwjgl_util_applet.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib/jorbis-0.0.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib/jnlp.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib/jinput.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/slick/lib/ibxm.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/lwjgl-2.9.1/jar/asm-debug-all.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Maaro_000/Desktop/Programming stuff W8/lwjgl/lwjgl-2.9.1/jar/jinput.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/twl/external-libs/xpp3-1.1.4c.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://twl.l33tlabs.org/dist/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/lwjgl-2.9.3/lwjgl-2.9.3/jar/lwjgl_util_applet.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://legacy.lwjgl.org/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/slick/lib/jnlp.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://slick.ninjacave.com/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/slick/lib/jinput.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://slick.ninjacave.com/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/slick/lib/ibxm.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://slick.ninjacave.com/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/lwjgl-2.9.3/lwjgl-2.9.3/jar/asm-debug-all.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://legacy.lwjgl.org/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/lwjgl-2.9.3/lwjgl-2.9.3/jar/jinput.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://legacy.lwjgl.org/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/twl/external-libs/lzma.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://twl.l33tlabs.org/dist/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Nicholas/Desktop/eclipse-jee-mars-R-win32-x86_64/slick/lib/natives-windows.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://slick.ninjacave.com/javadoc/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

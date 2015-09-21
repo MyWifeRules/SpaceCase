@@ -32,11 +32,19 @@ import de.matthiasmann.twl.renderer.lwjgl.LWJGLRenderer;
 
 public class mainGameEngine extends BasicGameState implements KeyListener, MouseListener{
 
+	/*
+	 * I still need to change this class to use fpsCamera for movement, and translate cubes using
+	 * tesseract methods rather than manually. need to change opengl methods to use face class 
+	 * methods for texture and vertex locations.
+	 * 
+	 * 
+	 */
+	
 	/** position of quad */
 	float x = 0, y = 0, z = 0;
 	/** angle of quad rotation */
 	float rotation = 0;
-	
+	fpsCamera firstPlayer = new fpsCamera(x,y,z);
 	/** time at last frame */
 	long lastFrame;
 	
@@ -68,7 +76,7 @@ public class mainGameEngine extends BasicGameState implements KeyListener, Mouse
       System.out.print("MGE Started"+ getTime() + "\n");
       
       sm = new SoundManager();
-      //sm.testingPlay();
+      sm.testingPlay();
       //test sounds
       
       
@@ -103,6 +111,11 @@ public class mainGameEngine extends BasicGameState implements KeyListener, Mouse
 	public void update(int delta) {
 		// rotate quad
 		//rotation += 0.15f * delta;
+	/*	if (Keyboard.isKeyDown(Keyboard.KEY_W))	z += 0.05f * delta;
+		if (Keyboard.isKeyDown(Keyboard.KEY_A))	rotation += 0.05f * delta;
+		if (Keyboard.isKeyDown(Keyboard.KEY_S))	z -= 0.05f * delta;
+		if (Keyboard.isKeyDown(Keyboard.KEY_D))	rotation -= 0.05f * delta;
+		*/
 		if (Keyboard.isKeyDown(Keyboard.KEY_W))	z += 0.05f * delta;
 		if (Keyboard.isKeyDown(Keyboard.KEY_A))	rotation += 0.05f * delta;
 		if (Keyboard.isKeyDown(Keyboard.KEY_S))	z -= 0.05f * delta;
@@ -179,9 +192,9 @@ public class mainGameEngine extends BasicGameState implements KeyListener, Mouse
 	}
 
 	public void renderGL() {
-		xpos = Float.toString(x);
-		ypos = Float.toString(y);
-		zpos = Float.toString(z);
+		xpos = Float.toString(firstPlayer.getPosition().x);
+		ypos = Float.toString(firstPlayer.getPosition().y);
+		zpos = Float.toString(firstPlayer.getPosition().z);
 		
 		
 		GL11.glEnable(GL11.GL_TEXTURE_2D);//enable textures
@@ -192,7 +205,7 @@ public class mainGameEngine extends BasicGameState implements KeyListener, Mouse
 		// R,G,B,A Set The Color To Blue One Time Only
 		GL11.glColor3f(1.0f, 1.0f, 1.0f);
 		GL11.glLoadIdentity();
-		GL11.glTranslatef(x, y,-10.0f);
+		GL11.glTranslatef(firstPlayer.getPosition().x, firstPlayer.getPosition().y,-10.0f);
 		GL11.glRotatef(rotation, 0f, 1f, 0f);
 		// draw quad
 		GL11.glPushMatrix();
@@ -201,16 +214,16 @@ public class mainGameEngine extends BasicGameState implements KeyListener, Mouse
 			GL11.glBegin(GL11.GL_QUADS);
 			
 			    GL11.glTexCoord2f(0, 0); // top left
-				GL11.glVertex3f(x - 1, y - 1,z);
+				GL11.glVertex3f(firstPlayer.getPosition().x - 1, firstPlayer.getPosition().y - 1,firstPlayer.getPosition().z);
 			    
                 GL11.glTexCoord2f(0, 1); // bottom left 
-				GL11.glVertex3f(x + 1, y - 1,z);
+				GL11.glVertex3f(firstPlayer.getPosition().x + 1, firstPlayer.getPosition().y - 1,firstPlayer.getPosition().z);
                 
                 GL11.glTexCoord2f(1, 1); // bottom right
-				GL11.glVertex3f(x + 1, y + 1,z);
+				GL11.glVertex3f(firstPlayer.getPosition().x + 1, firstPlayer.getPosition().y + 1,firstPlayer.getPosition().z);
                 
                 GL11.glTexCoord2f(1, 0); // top right
-				GL11.glVertex3f(x - 1, y + 1,z);
+				GL11.glVertex3f(firstPlayer.getPosition().x - 1, firstPlayer.getPosition().y + 1,firstPlayer.getPosition().z);
                 //end face front
 			
 				GL11.glEnd();

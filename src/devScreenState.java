@@ -32,6 +32,7 @@ public class devScreenState extends BasicGameState implements KeyListener{
 		og = game;
 		gc = container;
 		devImage = new Image("tpg.png");
+		devImage = devImage.getScaledCopy(gc.getScreenWidth(), gc.getHeight());
 		i = container.getInput();
 		i.addKeyListener(this);
 	}

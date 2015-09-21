@@ -4,154 +4,18 @@ import org.lwjgl.util.vector.Vector4f;
 
 public class tessaract 
 {
-  //This is a list of all possible blocks
-	enum TessaractType
-	{
-	Vacuum(0),
-	Air(1),
-	Bedrock(2),
-	Stone(3),
-	Dirt(4),
-	Grass(5),
-	Sand(6),
-	Lava(7),
-	Water(8),
-	Ore(9),
-	Wood(10),
-	Leaves(11),
-	Sandstone(12),
-	Cobblestone(13)
-	;
-	private String type = new String("Air");
-	private int tessType = 0;
+	face frontFace = new face("front");
+	face leftSideFace = new face("left");
+	face rearFace = new face("rear");
+	face rightSideFace = new face("right");
+	face topFace = new face("top");
+	face bottomFace = new face("bottom");
 	
 	
-	//empty constructor. defaults to air if not defined
-	private TessaractType(){tessType = 0; type = "Vacuum";}
-	
-	private TessaractType(int ttype)
-	{
-		
-	tessType = ttype;
-
-	switch (ttype) 
-	{
-    case 0:
-    	type = "Air";
-    	break;
-    case 1:
-    	type = "Bedrock";
-    	break;
-    case 2:
-    	type = "Stone";
-    	break;
-    case 3:
-    	type = "Dirt";
-    	break;
-    case 4:
-    	type = "Grass";
-    	break;
-    case 5:
-    	type = "Sand";
-    	break;
-    case 6:
-    	type = "Lava";
-    	break;
-    case 7:
-    	type = "Water";
-    	break;
-    case 8:
-    	type = "Ore";
-    	break;
-    case 9:
-    	type = "Wood";
-    	break;
-    case 10:
-    	type = "Leaves";
-    	break;
-    case 11:
-    	type = "Sandstone";
-    	break;
-    case 12:
-    	type = "Cobblestone";
-    	break; 	
-    default: 
-    	type = "Air";
-    break;
-    }
-	
-	}//end constructor
-	
-	private TessaractType(String ttype)
-	{
-	type = ttype;
-	switch (type) 
-	{
-	case "Vacuum":
-		tessType = 0;
-		break;
-    case "Air":
-    	tessType = 1;
-    	break;
-    case "BedRock":
-    	tessType = 2;
-    	break;
-    case "Stone":
-    	tessType = 3;
-    	break;
-    case "Dirt":
-    	tessType = 4;
-    	break;
-    case "Grass":
-    	tessType = 5;
-    	break;
-    case "Sand":
-    	tessType = 6;
-    	break;
-    case "Lava":
-    	tessType = 7;
-    	break;
-    case "Water":
-    	tessType = 8;
-    	break;
-    case "Ore":
-    	tessType = 9;
-    	break;
-    case "Wood":
-    	tessType = 10;
-    	break;
-    case "Leaves":
-    	tessType = 11;
-    	break;
-    case "Sandstone":
-    	tessType = 12;
-    	break;
-    case "Cobblestone":
-    	tessType = 13;
-    	break; 	
-    default: 
-    	type = "Vacuum";
-    	tessType = 0;
-    break;
-    }
-	
-	}
-	
-	final String getTypeString()
-	{
-		return type;
-	}
-	
-	final int getTypeint()
-	{
-		return tessType;
-	}
-	
-	}//end enum
-	
+  
 
 	//What type of block is this instance? TypeOfTess tells!
-	private TessaractType TypeOfTess;
+	private int TypeOfTess;
 	  
 	private boolean isVisible = false;
 	
@@ -166,6 +30,13 @@ public class tessaract
 	 TypeOfTess = TessaractType.Vacuum;
 	}
 	
+	public tessaract(int type, int x, int y, int z,int ang, int radloc)
+	{
+	TypeOfTess = type;
+	tessPosition = new Vector4f(x,y,z,ang);
+	radiusLocation = radloc;
+	
+	}
 	public tessaract(String type, int x, int y, int z, int radloc)
 	{
 		switch (type) 
@@ -227,7 +98,7 @@ public class tessaract
 	isVisible = b;
 	}
 
-	public TessaractType getType()
+	public int getType()
 	{
 		return TypeOfTess;
 	}
@@ -261,5 +132,30 @@ public class tessaract
 	{
 		return radiusLocation;
 	}
-	
+	public face getFace(String s)
+	{
+		if(s.equals("front")){
+			return frontFace;
+		}
+		if(s.equals("left")){
+			return leftSideFace;
+		}
+		if(s.equals("rear")){
+			return rearFace;
+		}
+		if(s.equals("right")){
+			return rightSideFace;
+		}
+		
+		if(s.equals("top")){
+			return topFace;
+		}
+
+		if(s.equals("bottom")){
+			return bottomFace;
+		}
+		
+		return null;
+		
+	}
 }

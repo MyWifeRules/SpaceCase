@@ -1,3 +1,5 @@
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.IOException;
 
 import javafx.embed.swing.JFXPanel;
@@ -15,6 +17,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
+
 import org.newdawn.slick.Input;
 
 import de.matthiasmann.twl.GUI;
@@ -28,10 +31,26 @@ public class SpaceCaseMain extends StateBasedGame implements Game, KeyListener{
 	static ThemeManager theme;
 	static Input i;
 	static GUI gooey;
+	static int width = 800;
+	static int height = 600;
 	
 	public SpaceCaseMain(String title) 
 	{
 		super(title);
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		width = screenSize.width;
+		height = screenSize.height;
+		// JFX panel is needed to make JFX sounds work. it doesn't actually do anything other than that!
+		JFXPanel fxPanel = new JFXPanel();
+		fxPanel.isValid();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public SpaceCaseMain(String title, int w, int h) 
+	{
+		super(title);
+		width = w;
+		height = h;
 		
 		// JFX panel is needed to make JFX sounds work. it doesn't actually do anything other than that!
 		JFXPanel fxPanel = new JFXPanel();
@@ -41,10 +60,11 @@ public class SpaceCaseMain extends StateBasedGame implements Game, KeyListener{
 	
 	public static void main(String[] args) {
 		
-		scm = new SpaceCaseMain("SpaceCase Test!"); 
+		scm = new SpaceCaseMain("SpaceCase Test!");
+		
 		
 		try {
-			Display.setDisplayMode(new DisplayMode(1600, 900));
+			//Display.setDisplayMode(new DisplayMode(1366, 768));
 	        Display.setTitle("SpaceCase ver 0.01");
 	        Display.setVSyncEnabled(true);
 			Display.create();
@@ -85,7 +105,7 @@ public class SpaceCaseMain extends StateBasedGame implements Game, KeyListener{
 		
 		try {//try to start game.
 			
-AppGameContainer container = new AppGameContainer(scm, 1600, 900,true);
+AppGameContainer container = new AppGameContainer(scm, scm.getWidth(), scm.getHeight(),true);
               AppGameContainer.enableSharedContext();
           container.start();
 	     } 
@@ -126,6 +146,13 @@ AppGameContainer container = new AppGameContainer(scm, 1600, 900,true);
 		return renderer;
 	}
 	
+	public int getWidth(){
+		return width;
+	}
+	
+	public int getHeight(){
+		return height;
+	}
 
 	
 
