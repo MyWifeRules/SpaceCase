@@ -9,6 +9,7 @@ import javafx.embed.swing.JFXPanel;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.Sys;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GLContext;
@@ -64,8 +65,10 @@ public class mainGameEngine extends BasicGameState implements KeyListener, Mouse
     TrueTypeFont testx, testy, testz;
     String xpos,ypos,zpos;
     Sphere sTest;
+	Mouse mouse;
+    tessaract testicle = new tessaract(TessaractType.Bedrock,0,0,0,0,0);
     
-	/*public static void main(String[] argv) {
+    /*public static void main(String[] argv) {
 		mainGameEngine mainGameEngine = new mainGameEngine();
 		mainGameEngine.start();
 	}*/
@@ -116,23 +119,23 @@ public class mainGameEngine extends BasicGameState implements KeyListener, Mouse
 		if (Keyboard.isKeyDown(Keyboard.KEY_S))	z -= 0.05f * delta;
 		if (Keyboard.isKeyDown(Keyboard.KEY_D))	rotation -= 0.05f * delta;
 		*/
-		if (Keyboard.isKeyDown(Keyboard.KEY_W))	z += 0.05f * delta;
-		if (Keyboard.isKeyDown(Keyboard.KEY_A))	rotation += 0.05f * delta;
-		if (Keyboard.isKeyDown(Keyboard.KEY_S))	z -= 0.05f * delta;
-		if (Keyboard.isKeyDown(Keyboard.KEY_D))	rotation -= 0.05f * delta;
+		if (Keyboard.isKeyDown(Keyboard.KEY_W))	firstPlayer.walkForward(0.05f * delta);;
+		if (Keyboard.isKeyDown(Keyboard.KEY_A))	firstPlayer.yaw(0.05f * delta);
+		if (Keyboard.isKeyDown(Keyboard.KEY_S))	firstPlayer.walkBackwards(-0.05f * delta);
+		if (Keyboard.isKeyDown(Keyboard.KEY_D))	firstPlayer.yaw(-0.05f * delta);
 		
-		if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)) x -= 0.01f * delta;
-		if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) x += 0.01f * delta;
-		if (Keyboard.isKeyDown(Keyboard.KEY_UP)) y -= 0.01f * delta;
-		if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) y += 0.01f * delta;
+		if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)) firstPlayer.strafeLeft(-0.01f * delta);
+		if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) firstPlayer.strafeRight(0.01f * delta);
+		if (Keyboard.isKeyDown(Keyboard.KEY_UP)) firstPlayer.flyUp(0.01f * delta);
+		if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) firstPlayer.flyDown(0.01f * delta);
 
 		if (Keyboard.isKeyDown(Keyboard.KEY_ESCAPE)) {quitGame();}
 
 		if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) 
 		{
-			System.out.println("x = " + x);
-			System.out.println("y = " + y);
-			System.out.println("z = " + z);
+			System.out.println("x = " + firstPlayer.getPosition().x);
+			System.out.println("y = " + firstPlayer.getPosition().y);
+			System.out.println("z = " + firstPlayer.getPosition().x);
 			System.out.println("Rotation = " + rotation);
 			
 		}
@@ -206,12 +209,17 @@ public class mainGameEngine extends BasicGameState implements KeyListener, Mouse
 		GL11.glColor3f(1.0f, 1.0f, 1.0f);
 		GL11.glLoadIdentity();
 		GL11.glTranslatef(firstPlayer.getPosition().x, firstPlayer.getPosition().y,-10.0f);
-		GL11.glRotatef(rotation, 0f, 1f, 0f);
+		GL11.glRotatef(firstPlayer.getYaw(), 0f, 1f, 0f);
 		// draw quad
 		GL11.glPushMatrix();
-			//GL11.glTranslatef(-x, -y,z);
 		
-			GL11.glBegin(GL11.GL_QUADS);
+		testicle.setPosition(firstPlayer.getPosition().x, firstPlayer.getPosition().y, firstPlayer.getPosition().z, firstPlayer.getPitch());
+		
+		//RENDER ENGINE GOES HERE!
+		
+		
+			/*This is the old direct render.
+			 * GL11.glBegin(GL11.GL_QUADS);
 			
 			    GL11.glTexCoord2f(0, 0); // top left
 				GL11.glVertex3f(firstPlayer.getPosition().x - 1, firstPlayer.getPosition().y - 1,firstPlayer.getPosition().z);
@@ -314,6 +322,8 @@ GL11.glBegin(GL11.GL_QUADS);
 			
 		GL11.glPopMatrix();
 
+		*/
+
 		testx.drawString(100, 100, xpos, Color.white);
 		testy.drawString(100, 120, ypos, Color.white);
 		testz.drawString(100,140,zpos,Color.white);
@@ -359,7 +369,12 @@ GL11.glBegin(GL11.GL_QUADS);
 			e.printStackTrace();
 		}
 	      System.out.print("MGE init'ed "+ getTime() + "\n");
-		
+		try {
+			mouse.create();
+		} catch (LWJGLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override

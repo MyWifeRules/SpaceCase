@@ -50,6 +50,14 @@ public class fpsCamera {
 		
 	}
 	
+	public void flyUp(float distance){
+		position.y += distance * (float)Math.sin(Math.toRadians(yaw));
+	}
+	
+	public void flyDown(float distance){
+		position.y -= distance * (float)Math.sin(Math.toRadians(yaw));
+	}
+	
 	public Vector3f getPosition(){
 		if (position != null ){
 			return position;
@@ -57,5 +65,19 @@ public class fpsCamera {
 			return new Vector3f(0,0,0);
 		}
 	}
+	
+	public float getYaw(){
+		return yaw;
+	}
+	
+	public float getPitch(){
+	return pitch;
+	}
+	
+	
+	
+	
+	
+	
 	
 }//end class

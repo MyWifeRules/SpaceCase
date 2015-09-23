@@ -17,7 +17,7 @@ public class tessaract
 	//What type of block is this instance? TypeOfTess tells!
 	private int TypeOfTess;
 	  
-	private boolean isVisible = false;
+	private boolean isVisible = true;
 	
 	//fourth variable is for angle of block
 	private Vector4f tessPosition = new Vector4f(1.0f,1.0f,1.0f,0.0f);
