@@ -18,6 +18,8 @@ public class hyperChunkManager
 		return hca.getTesses();
 	}
 	
-	
+	public void generateHyperChunk(){
+		hca.generateHyperChunk();
+	}
 	
 }

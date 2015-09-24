@@ -28,6 +28,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.util.ResourceLoader;
 import org.lwjgl.util.glu.Sphere;
+import org.lwjgl.opengl.ARBVertexBufferObject;
 
 import de.matthiasmann.twl.renderer.lwjgl.LWJGLRenderer;
 
@@ -65,9 +66,9 @@ public class mainGameEngine extends BasicGameState implements KeyListener, Mouse
     TrueTypeFont testx, testy, testz;
     String xpos,ypos,zpos;
     Sphere sTest;
-	Mouse mouse;
     tessaract testicle = new tessaract(TessaractType.Bedrock,0,0,0,0,0);
     
+    hyperChunkManager hcm = new hyperChunkManager();
     /*public static void main(String[] argv) {
 		mainGameEngine mainGameEngine = new mainGameEngine();
 		mainGameEngine.start();
@@ -213,7 +214,7 @@ public class mainGameEngine extends BasicGameState implements KeyListener, Mouse
 		// draw quad
 		GL11.glPushMatrix();
 		
-		testicle.setPosition(firstPlayer.getPosition().x, firstPlayer.getPosition().y, firstPlayer.getPosition().z, firstPlayer.getPitch());
+		//testicle.setPosition(firstPlayer.getPosition().x, firstPlayer.getPosition().y, firstPlayer.getPosition().z, firstPlayer.getPitch());
 		
 		//RENDER ENGINE GOES HERE!
 		
@@ -361,6 +362,7 @@ GL11.glBegin(GL11.GL_QUADS);
 		og = game;
 		gc = container;
 		i = container.getInput();
+		hcm.generateHyperChunk();
 		try {
 			test1 = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("resources/textures/netherrack.png"));
 		} catch (IOException e) {
@@ -370,7 +372,7 @@ GL11.glBegin(GL11.GL_QUADS);
 		}
 	      System.out.print("MGE init'ed "+ getTime() + "\n");
 		try {
-			mouse.create();
+			Mouse.create();
 		} catch (LWJGLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
